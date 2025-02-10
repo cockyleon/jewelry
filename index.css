@@ -14,7 +14,7 @@ html, body {
   max-width: 1440px;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 33px 0 97px;
+  padding: 33px 0 70px;
   font-family: SourceHanSansCN-Medium, Source Han Sans CN;
   box-sizing: border-box;
 }
@@ -603,8 +603,6 @@ html, body {
   letter-spacing: 2px;
   margin-top: 77px;
   position: relative;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #fff;
   text-align: center;
   opacity: 1;
   transform: none;
@@ -975,11 +973,11 @@ html, body {
   }
 
   .long-banner {
-    width: 100%;
+    width: 42%;
     height: auto;
     margin: 0 auto;
     max-width: 300px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     display: block;
     opacity: 1 !important;
     transform: none !important;
@@ -1006,14 +1004,13 @@ html, body {
     font-size: 20px;
     line-height: 30px;
     letter-spacing: 2px;
-    margin-bottom: 15px;
+    margin-bottom: 2px;
   }
 
   .wrapper-4 .detail {
     font-size: 14px;
     line-height: 30px;
     letter-spacing: 2px;
-    margin-bottom: 15px;
   }
 
   .detail::after {
@@ -1022,20 +1019,21 @@ html, body {
     width: 48px;
     height: 2px;
     background-color: #156f4e;
-    margin: 25px auto;
+    margin-top: 0px;
+    margin-bottom: 20px;
   }
 
   .wrapper-4 .desc {
     font-size: 12px;
     line-height: 24px;
     letter-spacing: 1.5px;
-    margin-bottom: 20px;
+    margin-bottom: 2px;
     max-width: 90px;
   }
 
   .wrapper-4 .label-1 {
     font-size: 12px;
-    margin-top: 30px;
+    margin-top: 50px;
   }
 
   .wrapper-4,
@@ -1071,7 +1069,7 @@ html, body {
   }
 
   .container-4 {
-    height: 500px;
+    height: 492px;
     background-size: auto 100%;
     background-position: right center;
     padding: 40px 20px;
@@ -1093,6 +1091,7 @@ html, body {
   } */
 
   .wrapper-5 {
+    top: 20px;
     margin: 0 auto;
     width: 100%;
     max-width: 300px;
@@ -1103,6 +1102,16 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  .detail-1::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 2px;
+    background-color: #156f4e;
+    margin-top: 0px;
+    margin-bottom: 20px;
   }
 
   .wrapper-5 .caption-1,
@@ -1117,7 +1126,7 @@ html, body {
   .caption-1 {
     font-size: 20px;
     line-height: 48px;
-    margin-top: -70px;
+    margin-top: -20px;
     opacity: 1;
     transform: none;
   }
@@ -1134,7 +1143,7 @@ html, body {
     width: 100%;
     max-width: 90px;
     font-size: 12px;
-    margin-top: -10px;
+    margin-top: 0px;
     line-height: 20px;
     opacity: 1;
     transform: none;
@@ -1142,38 +1151,62 @@ html, body {
 
   .word-1 {
     font-size: 12px;
-    margin-top: 240px;
+    margin-top: 280px;
     opacity: 1;
     transform: none;
+  }
+
+  .word-1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 1px;
+    background-color: #fff;
+    margin-top: 0px;
+    margin-bottom: 20px;
   }
 
   /* container-1 适配 */
   .container-1 {
-    height: 450px;
+    height: 546px;
     min-height: auto;
-    padding: 0 0 36px;
+    padding: 0;
+    background-image: url(./images/img_2_mobile.png);
+    background-size: cover;
+    background-position: center;
+    display: block;
+    flex-direction: column;
+  }
+
+  .container-1 .mobile-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    background: transparent;
+    margin: 0;
+    position: relative;
+    z-index: 3;
+  }
+
+  .container-1 .mobile-logo img {
+    width: 320px;
+    height: 48px;
+    object-fit: contain;
   }
 
   .container-1 .picture {
-    width: 100%;
-    height: 67%;
-    position: absolute;
-    top: 106px;
-    left: 0;
-    transform: none;
-    object-fit: cover;
-    opacity: 1;
+    display: none;
   }
 
   .container-1 .wrapper-1-common {
-    position: absolute;
-    bottom: 36px;
-    left: 0;
-    right: 0;
+    position: relative;
     z-index: 2;
     padding: 20px 0;
     width: 100%;
     opacity: 1;
+    margin-top: -20px;
   }
 
   .title {
@@ -1181,7 +1214,7 @@ html, body {
     letter-spacing: 2px;
     white-space: normal;
     padding: 0 20px;
-    margin: 0;
+    margin-top: 320px;
   }
 
   .title-1 {
@@ -1189,7 +1222,7 @@ html, body {
     letter-spacing: 1.5px;
     white-space: normal;
     padding: 0 20px;
-    margin-top: 10px;
+    margin-top: 1px;
   }
 
   .wrapper-2 {
@@ -1228,7 +1261,7 @@ html, body {
 
   /* container-5 适配 */
   .container-5 {
-    height: 500px;
+    height: 492px;
     min-height: auto;
     background-image: url(./images/img_6_mobile.png);
     background-size: cover;
@@ -1239,7 +1272,7 @@ html, body {
     justify-content: flex-end;
     position: relative;
     overflow: hidden;
-    margin: 60px 0 0;
+    margin: 15px 0 0;
   }
 
   .banner {
@@ -1248,10 +1281,9 @@ html, body {
 
   .wrapper-6 {
     margin: 0;
-    padding: 30px 20px;
     width: 100%;
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
     left: 0;
     z-index: 2;
   }
@@ -1270,7 +1302,6 @@ html, body {
     font-size: 20px;
     line-height: 1.4;
     letter-spacing: 2px;
-    margin-bottom: 10px;
     color: #fff;
   }
 
@@ -1278,14 +1309,13 @@ html, body {
     font-size: 14px;
     line-height: 1.4;
     letter-spacing: 1px;
-    margin-bottom: 10px;
     color: #fff;
   }
 
   .horizontal-line-3 {
     width: 48px;
     height: 2px;
-    margin: 15px auto;
+    margin: 4px auto;
     background-color: #156f4e;
   }
 
@@ -1296,11 +1326,12 @@ html, body {
     max-width: 90px;
     margin: 0 auto;
     color: #fff;
+    margin-top: 20px;
   }
 
   .word-2 {
     font-size: 12px;
-    margin-top: 298px;
+    margin-top: 300px;
     color: #fff;
     position: relative;
     display: inline-block;
@@ -1312,7 +1343,7 @@ html, body {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 64px;
+    width: 100px;
     height: 1px;
     background-color: #fff;
   }
@@ -1558,7 +1589,7 @@ html, body {
 
   /* 调整内容区域的上边距 */
   .submain {
-    margin-top: 45px;
+    margin-top: 27px;
   }
 
   .mobile-menu-btn {
@@ -1743,12 +1774,18 @@ html, body {
     width: 100%;
   }
 
+  .container-2 {
+    margin-top: 40px;
+    width: 100%;
+  }
+
+
   .container-3-1 {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 500px;
-    margin: 60px 0 0;
+    height: 492px;
+    margin: 15px 0 0;
     padding: 0;
     background: #000;
     position: relative;
@@ -1779,7 +1816,7 @@ html, body {
     text-align: center;
     background: transparent;
     position: absolute;
-    bottom: 36px;
+    bottom: -10px;
     left: 0;
     z-index: 2;
   }
@@ -1788,7 +1825,7 @@ html, body {
     font-size: 20px;
     line-height: 1.4;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     color: #fff;
     opacity: 1;
     transform: none;
@@ -1802,12 +1839,13 @@ html, body {
     color: #fff;
     opacity: 1;
     transform: none;
+    margin-top: 0px;
   }
 
   .container-3-1 .detail::after {
     width: 48px;
     height: 2px;
-    margin: 15px auto;
+    margin: 4px auto;
   }
 
   .container-3-1 .desc {
@@ -1819,11 +1857,12 @@ html, body {
     color: #fff;
     opacity: 1;
     transform: none;
+    margin-top: 10px;
   }
 
   .container-3-1 .label-1 {
     font-size: 12px;
-    margin-top: 30px;
+    margin-top: 20px;
     color: #fff;
     position: relative;
     display: inline-block;
@@ -1835,14 +1874,14 @@ html, body {
     bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
-    width: 64px;
+    width: 100px;
     height: 1px;
     background-color: #fff;
   }
 
   /* container-5-1 移动端适配 */
   .container-5-1 {
-    height: 500px;
+    height: 492px;
     min-height: auto;
     background-image: url(./images/img_5_1_mobile.png);
     background-size: cover;
@@ -1853,7 +1892,7 @@ html, body {
     justify-content: flex-end;
     position: relative;
     overflow: hidden;
-    margin: 60px 0 0;
+    margin: 15px 0 0;
   }
 
   .container-5-1 .long-banner-5-1 {
@@ -1865,7 +1904,7 @@ html, body {
     padding: 30px 20px;
     width: 100%;
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
     left: 0;
     z-index: 2;
     text-align: center;
@@ -1875,7 +1914,7 @@ html, body {
     font-size: 20px;
     line-height: 1.4;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     color: #fff;
     opacity: 1;
     transform: none;
@@ -1885,7 +1924,7 @@ html, body {
     font-size: 14px;
     line-height: 1.4;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     color: #fff;
     opacity: 1;
     transform: none;
@@ -1894,7 +1933,7 @@ html, body {
   .container-5-1 .detail::after {
     width: 48px;
     height: 2px;
-    margin: 15px auto;
+    margin: 4px auto;
   }
 
   .container-5-1 .desc {
@@ -1906,11 +1945,12 @@ html, body {
     color: #fff;
     opacity: 1;
     transform: none;
+    margin-top: 20px;
   }
 
   .container-5-1 .label-1 {
     font-size: 12px;
-    margin-top: 289px;
+    margin-top: 290px;
     color: #fff;
     position: relative;
     display: inline-block;
@@ -1922,7 +1962,7 @@ html, body {
     bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
-    width: 64px;
+    width: 100px;
     height: 1px;
     background-color: #fff;
   }
@@ -1949,7 +1989,7 @@ html, body {
 
   .container-6 .wrapper-7 {
     margin: 0;
-    padding: 30px 20px;
+    padding: 35px 0px;
     width: 100%;
     position: absolute;
     bottom: 0px;
@@ -1962,7 +2002,7 @@ html, body {
     font-size: 20px;
     line-height: 1.4;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     color: #000;
     opacity: 1;
     transform: none;
@@ -1972,7 +2012,7 @@ html, body {
     font-size: 14px;
     line-height: 1.4;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     color: #000;
     opacity: 1;
     transform: none;
@@ -1984,7 +2024,7 @@ html, body {
     width: 48px;
     height: 2px;
     background-color: #156f4e;
-    margin: 15px auto;
+    margin: 4px auto;
   }
 
   .container-6 .desc {
@@ -1996,11 +2036,12 @@ html, body {
     color: #000;
     opacity: 1;
     transform: none;
+    margin-top: 20px;
   }
 
   .container-6 .label-1 {
     font-size: 12px;
-    margin-top: 300px;
+    margin-top: 320px;
     color: #fff;
     position: relative;
     display: inline-block;
@@ -2012,7 +2053,7 @@ html, body {
     bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
-    width: 64px;
+    width: 100px;
     height: 1px;
     background-color: #fff;
   }
@@ -2029,18 +2070,28 @@ html, body {
 
   .group-1 {
     gap: 15px;
+    margin-top: 10px;
   }
 
   .icon-text,
   .icon-camera,
   .icon-logo,
   .icon-wechat {
-    width: 20px;
+    width: auto;
     height: 20px;
   }
 
+  .wrapper-8 {
+    margin-top: 10px;
+  }
+
   .footer {
-    margin-top: 100px;
+    margin-top: 60px;
+  }
+
+  .desc-5 {
+    font-size: 8px;
+    margin-top: 30px;
   }
 
   /* 移动端动画效果 */
@@ -2252,7 +2303,7 @@ html, body {
 
   .mobile-logo img {
     width: 320px;
-    height: 80px;
+    height: 50px;
     object-fit: contain;
   }
 
