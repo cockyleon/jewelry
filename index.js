@@ -11,6 +11,22 @@ window.onload = () => {
   overlay.className = 'menu-overlay';
   document.body.appendChild(overlay);
 
+  // 滚动动画处理
+  const animateOnScroll = () => {
+    const elements = document.querySelectorAll('.picture, .long-banner, .long-banner-3-1, .long-banner-5-1, .long-banner-6, .title, .title-1, .title-2, .caption, .caption-1, .detail, .detail-1, .detail-2, .detail-3, .desc, .desc-1, .container-1 .wrapper-1-common');
+    
+    elements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementBottom = element.getBoundingClientRect().bottom;
+      const windowHeight = window.innerHeight;
+      
+      // 当元素进入视口时添加动画
+      if (elementTop < windowHeight * 0.85 && elementBottom > 0) {
+        element.classList.add('visible');
+      }
+    });
+  };
+
   // 移动端菜单处理
   function toggleMobileMenu() {
     headerBody.classList.toggle('menu-active');
@@ -34,7 +50,7 @@ window.onload = () => {
     
     setTimeout(() => {
       isAnimating = false;
-    }, 300);
+    }, 400);
   }
   
   // 处理滚动事件
@@ -51,6 +67,9 @@ window.onload = () => {
     }
     
     lastScrollTop = scrollTop;
+    
+    // 触发滚动动画
+    animateOnScroll();
   }
   
   // 移动端点击事件
@@ -73,10 +92,13 @@ window.onload = () => {
     rafId = requestAnimationFrame(handleScroll);
   }, { passive: true });
   
-  // 初始化header状态
+  // 初始化header状态和动画
   if (!isMobile) {
     animateHeader(true);
   }
+  
+  // 初始触发一次滚动动画
+  setTimeout(animateOnScroll, 100);
 
   // 处理窗口大小变化
   window.addEventListener('resize', () => {

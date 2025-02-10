@@ -28,7 +28,8 @@ html, body {
   z-index: 1000;
   background: #fff;
   box-shadow: none;
-  transition: box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+  will-change: transform;
 }
 
 .header-wrapper.header-visible {
@@ -50,7 +51,7 @@ html, body {
 
 .header-common.header {
   transform: translateY(0);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
   height: 151px;
   border-bottom: none;
@@ -61,8 +62,8 @@ html, body {
 .header-common.body {
   position: fixed;
   top: 118px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: top, transform;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity, visibility;
   display: flex;
   justify-content: center;
   padding-top: 60px;
@@ -79,10 +80,12 @@ html, body {
   transform: translateY(-100%);
   height: 80px;
   overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-visible .header-common.header {
   transform: translateY(0);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-hidden .header-common.body {
@@ -277,7 +280,7 @@ html, body {
   flex-direction: column;
   justify-content: flex-end;
   width: 100vw;
-  height: 779px;
+  height: 764px;
   padding: 0 0 36px;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -295,11 +298,15 @@ html, body {
   height: 779px;
   object-fit: cover;
   z-index: 1;
+  opacity: 1;
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .container-1 .wrapper-1-common {
   position: relative;
   z-index: 2;
+  opacity: 1;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .wrapper-1 {
@@ -314,6 +321,9 @@ html, body {
   line-height: 1.4;
   letter-spacing: 3.25px;
   text-align: center;
+  opacity: 1;
+  color: #fff;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .title-1 {
@@ -324,6 +334,9 @@ html, body {
   letter-spacing: 2.63px;
   text-align: center;
   margin-top: 10px;
+  opacity: 1;
+  color: #fff;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .wrapper-2 {
@@ -442,16 +455,24 @@ html, body {
 }
 
 .long-banner {
-  margin-left: 170px;
+  margin-left: 230px;
   width: 402px;
   height: 424px;
   object-fit: contain;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
 }
 
 .long-banner-3-1 {
   width: 714px;
   height: 704px;
   object-fit: contain;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
 }
 
 .long-banner-5-1 {
@@ -459,6 +480,10 @@ html, body {
   max-height: 1000px;
   object-fit: cover;
   object-position: left;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
 }
 
 .wrapper-4 {
@@ -469,6 +494,7 @@ html, body {
   align-items: center;
   padding-left: 0;
   box-sizing: border-box;
+  margin-right: 172px;
 }
 
 .wrapper-4-1 {
@@ -499,6 +525,10 @@ html, body {
   letter-spacing: 8px;
   margin: 0;
   text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  will-change: transform, opacity;
 }
 
 .detail {
@@ -509,6 +539,10 @@ html, body {
   letter-spacing: 4px;
   margin-top: 8px;
   text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  will-change: transform, opacity;
 }
 
 .detail::after {
@@ -530,6 +564,10 @@ html, body {
   margin-top: 0;
   width: 200px;
   text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  will-change: transform, opacity;
 }
 
 .label-1 {
@@ -541,23 +579,44 @@ html, body {
   margin-top: 77px;
   position: relative;
   text-align: center;
+  opacity: 1;
+  transform: none;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 .label-1::after {
   content: '';
-  top: 21px;
   position: absolute;
+  top: 21px;
   left: 0;
   width: 100%;
   height: 1px;
   background-color: #156F4E;
 }
 
+.word-1 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-top: 77px;
+  position: relative;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #fff;
+  text-align: center;
+  opacity: 1;
+  transform: none;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
 .container-4 {
   display: flex;
   position: relative;
   width: 100vw;
-  height: 779px;
+  height: 708px;
   margin: 158px 0 0;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -565,6 +624,7 @@ html, body {
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .thumbnail {
@@ -589,6 +649,10 @@ html, body {
   letter-spacing: 8px;
   margin: 0;
   text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  will-change: transform, opacity;
 }
 
 .detail-1 {
@@ -599,6 +663,10 @@ html, body {
   letter-spacing: 4px;
   margin-top: 8px;
   text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  will-change: transform, opacity;
 }
 
 .detail-1::after {
@@ -620,9 +688,13 @@ html, body {
   margin-top: 0;
   width: 200px;
   text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  will-change: transform, opacity;
 }
 
-.word-1 {
+.word-2 {
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
@@ -630,9 +702,13 @@ html, body {
   letter-spacing: 2px;
   margin-top: 77px;
   position: relative;
+  text-align: center;
   padding-bottom: 8px;
   border-bottom: 1px solid #fff;
-  text-align: center;
+  opacity: 1;
+  transform: none;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 .container-5 {
@@ -671,6 +747,10 @@ html, body {
   letter-spacing: 8px;
   margin: 0;
   text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  will-change: transform, opacity;
 }
 
 .desc-1 {
@@ -681,6 +761,10 @@ html, body {
   letter-spacing: 4px;
   margin-top: 8px;
   text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  will-change: transform, opacity;
 }
 
 .horizontal-line-3 {
@@ -700,19 +784,10 @@ html, body {
   margin-top: 0;
   width: 200px;
   text-align: center;
-}
-
-.word-2 {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  color: #fff;
-  letter-spacing: 2px;
-  margin-top: 77px;
-  position: relative;
-  text-align: center;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  will-change: transform, opacity;
 }
 
 .horizontal-line-4 {
@@ -748,6 +823,10 @@ html, body {
   width: 720px;
   height: 983px;
   object-fit: contain;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
 }
 
 .footer {
@@ -807,6 +886,56 @@ html, body {
   font-weight: 400;
 }
 
+/* 基础动画效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 图片和文字的基础动画类 */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 当元素可见时的状态 */
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* 移动端适配 */
 @media screen and (max-width: 768px) {
   .container-3,
@@ -861,10 +990,11 @@ html, body {
     margin-top: 40px;
   }
 
-  .container-4,
-  .container-5 {
-    height: auto;
-    padding: 60px 20px;
+  .container-4 {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    padding: 40px 20px;
   }
 
   .wrapper-5,
@@ -904,7 +1034,8 @@ html, body {
     top: 0;
     left: 0;
     transform: none;
-    object-fit: contain;
+    object-fit: cover;
+    opacity: 1;
   }
 
   .container-1 .wrapper-1-common {
@@ -915,6 +1046,7 @@ html, body {
     z-index: 2;
     padding: 20px 0;
     width: 100%;
+    opacity: 1;
   }
 
   .title {
@@ -1054,7 +1186,7 @@ html, body {
   .header-common.body {
     position: fixed;
     top: 60px;
-    transform: translateY(-100%);
+    transform: translateY(-10px);
     left: 0;
     width: 100%;
     height: auto;
@@ -1064,7 +1196,7 @@ html, body {
     align-items: flex-start;
     padding: 20px;
     box-shadow: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 998;
     overflow-y: auto;
     opacity: 0;
@@ -1073,9 +1205,6 @@ html, body {
 
   .header-common.body.menu-active {
     transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .menu-overlay {
@@ -1089,7 +1218,8 @@ html, body {
     z-index: 997;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(4px);
   }
 
   .menu-overlay.active {
@@ -1223,7 +1353,7 @@ html, body {
   }
 
   .header-hidden .header-common.body {
-    transform: translateY(-100%);
+    transform: translateY(-10px);
     opacity: 0;
     visibility: hidden;
   }
@@ -1272,7 +1402,7 @@ html, body {
   .header-common.body {
     position: fixed;
     top: 60px;
-    transform: translateY(-100%);
+    transform: translateY(-10px);
     left: 0;
     width: 100%;
     height: auto;
@@ -1282,7 +1412,7 @@ html, body {
     align-items: flex-start;
     padding: 20px;
     box-shadow: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 998;
     overflow-y: auto;
     opacity: 0;
@@ -1291,9 +1421,6 @@ html, body {
 
   .header-common.body.menu-active {
     transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .menu-overlay {
@@ -1307,7 +1434,8 @@ html, body {
     z-index: 997;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(4px);
   }
 
   .menu-overlay.active {
