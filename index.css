@@ -19,13 +19,61 @@ html, body {
   box-sizing: border-box;
 }
 
+/* Header相关样式 */
+.header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #fff;
+}
+
 .header-common {
   display: flex;
-  align-self: center;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  width: 100%;
   box-sizing: border-box;
+  background: #fff;
+}
+
+.header-common.header {
+  padding: 0;
+  transform: translateY(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  height: 80px;
+}
+
+.header-common.body {
+  position: fixed;
+  top: 80px;
+  transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: top;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  margin: 0;
+}
+
+.header-hidden .header-common.header {
+  transform: translateY(-100%);
+}
+
+.header-visible .header-common.header {
+  transform: translateY(0);
+}
+
+.header-hidden .header-common.body {
+  top: 0;
+}
+
+.header-visible .header-common.body {
+  top: 80px;
+}
+
+/* 内容区域添加上边距，为fixed header腾出空间 */
+.submain {
+  margin-top: 160px;
 }
 
 .tag-common {
@@ -149,9 +197,9 @@ html, body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
-  margin: 38px auto 0;
-  padding: 0 2rem;
+  max-width: none;
+  margin: 0;
+  padding: 1rem 0;
   box-sizing: border-box;
 }
 
@@ -194,30 +242,16 @@ html, body {
   color: rgba(50, 50, 50, 1);
 }
 
-.submain {
-  justify-content: center;
-  height: 779px;
-  margin-top: 9px;
-  background-color: #000000;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  padding: 0;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
 .container-1 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-self: center;
-  width: 100%;
-  max-width: 987px;
-  height: 100%;
+  width: 100vw;
+  height: 779px;
   padding: 0 12px 36px;
-  margin: 0 auto;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
   background-image: url(./images/img_2.png);
   background-size: cover;
   background-position: center;
@@ -715,41 +749,6 @@ html, body {
   line-height: 17px;
   color: #323232;
   letter-spacing: 2px;
-}
-
-/* 媒体查询 */
-@media screen and (min-width: 1024px) and (max-width: 1439px) {
-  .mod {
-    padding: 2rem 3rem;
-  }
-  
-  .body {
-    max-width: 1000px;
-  }
-  
-  .container-1 {
-    width: 90%;
-  }
-  
-  .wrapper-4,
-  .wrapper-5,
-  .wrapper-6 {
-    max-width: 600px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .mod {
-    padding: 33px 0 97px;
-  }
-  
-  .body {
-    max-width: 1200px;
-  }
-  
-  .container-1 {
-    width: 987px;
-  }
 }
 
 .footer-image {
