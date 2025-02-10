@@ -473,14 +473,15 @@ html, body {
 }
 
 .long-banner-5-1 {
-  width: 50%;
-  max-height: 1000px;
+  width: 937px;
+  height: 708px;
   object-fit: cover;
   object-position: left;
   opacity: 0;
   transform: translateY(50px);
   transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform, opacity;
+  margin-top: 150px;
 }
 
 .wrapper-4 {
@@ -835,7 +836,7 @@ html, body {
   align-items: center;
   width: 100vw;
   height: 779px;
-  margin-top: -60px;
+  margin-top: 150px;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   flex-direction: row;
