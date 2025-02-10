@@ -806,3 +806,534 @@ html, body {
   color: #808080;
   font-weight: 400;
 }
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+  .container-3,
+  .container-3-1,
+  .container-5-1,
+  .container-6 {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .long-banner,
+  .long-banner-3-1,
+  .long-banner-5-1,
+  .long-banner-6 {
+    width: 60%;
+    height: auto;
+    margin: 0;
+    max-width: 100%;
+    margin-bottom: 100px;
+  }
+
+  .wrapper-4,
+  .wrapper-4-1,
+  .wrapper-6-1,
+  .wrapper-7 {
+    width: 100%;
+    margin-top: 30px;
+    padding: 0;
+  }
+
+  .caption {
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: 4px;
+  }
+
+  .detail {
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 2px;
+  }
+
+  .desc {
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .label-1 {
+    margin-top: 40px;
+  }
+
+  .container-4,
+  .container-5 {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .wrapper-5,
+  .wrapper-6 {
+    margin: 0;
+  }
+
+  .caption-1,
+  .title-2 {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .detail-1,
+  .desc-1 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .detail-2,
+  .detail-3 {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* container-1 适配 */
+  .container-1 {
+    height: calc(100vw * 779 / 987);
+    min-height: auto;
+    padding: 0 0 36px;
+  }
+
+  .container-1 .picture {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: none;
+    object-fit: contain;
+  }
+
+  .container-1 .wrapper-1-common {
+    position: absolute;
+    bottom: 36px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 20px 0;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 28px;
+    letter-spacing: 2px;
+    white-space: normal;
+    padding: 0 20px;
+    margin: 0;
+  }
+
+  .title-1 {
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    white-space: normal;
+    padding: 0 20px;
+    margin-top: 10px;
+  }
+
+  .wrapper-2 {
+    margin-top: 30px;
+    width: 100px;
+    position: relative;
+    border-bottom: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .wrapper-2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 64px;  /* 根据字体大小和字数计算的宽度 */
+    height: 1px;
+    background-color: #156f4e;
+  }
+
+  .more {
+    font-size: 16px;
+  }
+
+  /* container-5 适配 */
+  .container-5 {
+    height: auto;
+    min-height: 500px;
+    background-image: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .banner {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: right center;
+  }
+
+  .wrapper-6 {
+    margin: 0;
+    padding: 30px 20px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .title-2 {
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: 4px;
+  }
+
+  .desc-1 {
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 2px;
+  }
+
+  .detail-3 {
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .word-2 {
+    margin-top: 40px;
+  }
+
+  .container-6 {
+    flex-direction: column-reverse;
+    height: auto;
+    padding: 20px;
+  }
+
+  .long-banner-6 {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: right center;
+  }
+
+  .wrapper-7 {
+    width: 100%;
+    margin: 0 0 30px 0;
+    padding: 0;
+    margin-top: 60px;
+  }
+
+  /* Header移动端适配 */
+  .header-wrapper {
+    height: auto;
+  }
+
+  .header-common.header {
+    height: 60px;
+    padding: 0 15px;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .header-common.body {
+    position: fixed;
+    top: 60px;
+    transform: translateY(-100%);
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 60px);
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    z-index: 998;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .header-common.body.menu-active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu-overlay {
+    display: block;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 997;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .tag-common {
+    font-size: 16px;
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-item-0,
+  .tag-item-1,
+  .tag-item-2,
+  .tag-item-3 {
+    margin: 0;
+  }
+
+  /* 移除原有的滚动显示隐藏效果 */
+  .header-hidden .header-common.body,
+  .header-visible .header-common.body {
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .container {
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+  }
+
+  .wrapper {
+    width: 24px;
+    height: 16px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .horizontal-line,
+  .horizontal-line-1,
+  .horizontal-line-2 {
+    width: 100%;
+    height: 2px;
+    background-color: #156f4e;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    transform-origin: left center;
+    transition: .25s ease-in-out;
+  }
+
+  .horizontal-line {
+    top: 0;
+  }
+
+  .horizontal-line-1 {
+    top: 2px;
+  }
+
+  .horizontal-line-2 {
+    top: 9px;
+  }
+
+  /* 菜单打开时的动画效果 */
+  .menu-active .horizontal-line {
+    transform: rotate(45deg);
+    top: 0;
+    left: 4px;
+  }
+
+  .menu-active .horizontal-line-1 {
+    width: 0%;
+    opacity: 0;
+  }
+
+  .menu-active .horizontal-line-2 {
+    transform: rotate(-45deg);
+    top: 14px;
+    left: 4px;
+  }
+
+  .label {
+    display: none;
+  }
+
+  .action-bg {
+    width: 160px;
+    height: 40px;
+  }
+
+  .word {
+    right: 50px;
+    font-size: 14px;
+  }
+
+  .icon-search {
+    right: 15px;
+    width: 20px;
+  }
+
+  .tag-common {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .tag-item-0,
+  .tag-item-1,
+  .tag-item-2,
+  .tag-item-3 {
+    margin: 0;
+  }
+
+  .header-hidden .header-common.header {
+    transform: translateY(0);
+    height: 60px;
+  }
+
+  .header-hidden .header-common.body {
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .header-visible .header-common.body {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    top: 60px;
+  }
+
+  /* 调整内容区域的上边距 */
+  .submain {
+    margin-top: 45px;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+}
+
+/* 移动端导航菜单 */
+.mobile-menu-btn {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .header-common.body {
+    position: fixed;
+    top: 60px;
+    transform: translateY(-100%);
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 60px);
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    z-index: 998;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .header-common.body.menu-active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu-overlay {
+    display: block;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 997;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .tag-common {
+    font-size: 16px;
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-item-0,
+  .tag-item-1,
+  .tag-item-2,
+  .tag-item-3 {
+    margin: 0;
+  }
+
+  /* 移除原有的滚动显示隐藏效果 */
+  .header-hidden .header-common.body,
+  .header-visible .header-common.body {
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+  }
+}
