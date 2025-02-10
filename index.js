@@ -13,15 +13,16 @@ window.onload = () => {
 
   // 滚动动画处理
   const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.picture, .long-banner, .long-banner-3-1, .long-banner-5-1, .long-banner-6, .title, .title-1, .title-2, .caption, .caption-1, .detail, .detail-1, .detail-2, .detail-3, .desc, .desc-1, .container-1 .wrapper-1-common');
+    const elements = document.querySelectorAll('.picture, .long-banner, .long-banner-3-1, .long-banner-5-1, .long-banner-6, .title, .title-1, .title-2, .caption, .caption-1, .detail, .detail-1, .detail-2, .detail-3, .desc, .desc-1, .word-1, .word-2, .more, .label-1, .horizontal-line-3, [class*="container-"] *');
     
     elements.forEach(element => {
-      const elementTop = element.getBoundingClientRect().top;
-      const elementBottom = element.getBoundingClientRect().bottom;
+      const rect = element.getBoundingClientRect();
+      const elementTop = rect.top;
+      const elementBottom = rect.bottom;
       const windowHeight = window.innerHeight;
       
       // 当元素进入视口时添加动画
-      if (elementTop < windowHeight * 0.85 && elementBottom > 0) {
+      if (elementTop < windowHeight * 0.9 && elementBottom > 0 && !element.classList.contains('visible')) {
         element.classList.add('visible');
       }
     });
@@ -69,7 +70,7 @@ window.onload = () => {
     lastScrollTop = scrollTop;
     
     // 触发滚动动画
-    animateOnScroll();
+    requestAnimationFrame(animateOnScroll);
   }
   
   // 移动端点击事件
@@ -84,13 +85,7 @@ window.onload = () => {
   }
   
   // 使用 requestAnimationFrame 优化滚动事件
-  let rafId = null;
-  window.addEventListener('scroll', () => {
-    if (rafId) {
-      cancelAnimationFrame(rafId);
-    }
-    rafId = requestAnimationFrame(handleScroll);
-  }, { passive: true });
+  window.addEventListener('scroll', handleScroll, { passive: true });
   
   // 初始化header状态和动画
   if (!isMobile) {
@@ -98,7 +93,7 @@ window.onload = () => {
   }
   
   // 初始触发一次滚动动画
-  setTimeout(animateOnScroll, 100);
+  requestAnimationFrame(animateOnScroll);
 
   // 处理窗口大小变化
   window.addEventListener('resize', () => {

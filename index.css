@@ -704,7 +704,6 @@ html, body {
   position: relative;
   text-align: center;
   padding-bottom: 8px;
-  border-bottom: 1px solid #fff;
   opacity: 1;
   transform: none;
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -968,22 +967,23 @@ html, body {
     padding: 20px;
   }
 
-  .long-banner {
-    width: 50%;
-    height: auto;
-    margin: 0 auto;
-    max-width: 300px;
-    margin-bottom: 30px;
-    opacity: 1;
-    transform: none;
-    display: block;
-  }
-
   .container-3 {
     flex-direction: column;
     align-items: center;
     margin-top: 60px;
     padding: 0 20px;
+  }
+
+  .long-banner {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    max-width: 300px;
+    margin-bottom: 30px;
+    display: block;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 
   .wrapper-4 {
@@ -994,9 +994,11 @@ html, body {
 
   .wrapper-4 .caption,
   .wrapper-4 .detail,
-  .wrapper-4 .desc {
-    opacity: 1;
-    transform: none;
+  .wrapper-4 .desc,
+  .wrapper-4 .label-1 {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
     margin: 0 auto;
   }
 
@@ -1022,7 +1024,6 @@ html, body {
     background-color: #156f4e;
     margin: 25px auto;
   }
-
 
   .wrapper-4 .desc {
     font-size: 12px;
@@ -1076,9 +1077,12 @@ html, body {
     padding: 40px 20px;
     overflow: hidden;
     position: relative;
+    margin-top: 38px;
+    background-image: url(./images/img_5_mobile.png);
+
   }
 
-  .container-4::before {
+  /* .container-4::before {
     content: '';
     position: absolute;
     top: 0;
@@ -1086,7 +1090,7 @@ html, body {
     width: 100%;
     height: 4444px;
     background-image: url(./images/img_5_mobile.png);
-  }
+  } */
 
   .wrapper-5 {
     margin: 0 auto;
@@ -1101,39 +1105,46 @@ html, body {
     justify-content: center;
   }
 
-  .caption-1,
-  .title-2 {
+  .wrapper-5 .caption-1,
+  .wrapper-5 .detail-1,
+  .wrapper-5 .detail-2,
+  .wrapper-5 .word-1 {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .caption-1 {
     font-size: 20px;
     line-height: 48px;
     margin-top: -70px;
+    opacity: 1;
+    transform: none;
   }
 
-  .detail-1,
-  .desc-1 {
+  .detail-1 {
     font-size: 14px;
     line-height: 30px;
     margin-top: -10px;
+    opacity: 1;
+    transform: none;
   }
 
-  .detail-2,
-  .detail-3 {
+  .detail-2 {
     width: 100%;
-    max-width: 300px;
-    font-size: 12px;
     max-width: 90px;
+    font-size: 12px;
     margin-top: -10px;
     line-height: 20px;
-  }
-
-  .detail-1::after {
-    width: 48px;
-    height: 2px;
-    margin-top: 3px;
+    opacity: 1;
+    transform: none;
   }
 
   .word-1 {
     font-size: 12px;
     margin-top: 240px;
+    opacity: 1;
+    transform: none;
   }
 
   /* container-1 适配 */
@@ -1183,11 +1194,19 @@ html, body {
 
   .wrapper-2 {
     margin-top: 30px;
-    width: 100px;
+    width: auto;
     position: relative;
     border-bottom: none;
     display: flex;
     justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+  }
+
+  .wrapper-2.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .wrapper-2::after {
@@ -1196,13 +1215,15 @@ html, body {
     bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
-    width: 64px;  /* 根据字体大小和字数计算的宽度 */
+    width: 64px;
     height: 1px;
     background-color: #156f4e;
   }
 
   .more {
-    font-size: 16px;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 1px;
   }
 
   /* container-5 适配 */
@@ -1230,7 +1251,7 @@ html, body {
     padding: 30px 20px;
     width: 100%;
     position: absolute;
-    bottom: -36px;
+    bottom: 0;
     left: 0;
     z-index: 2;
   }
@@ -1288,7 +1309,7 @@ html, body {
   .word-2::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     width: 64px;
@@ -2021,6 +2042,66 @@ html, body {
   .footer {
     margin-top: 100px;
   }
+
+  /* 移动端动画效果 */
+  .container-3 .long-banner,
+  .container-3-1 .long-banner-3-1,
+  .container-4 .thumbnail,
+  .container-5-1 .long-banner-5-1,
+  .container-6 .long-banner-6 {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .title-2,
+  .caption,
+  .caption-1,
+  .detail,
+  .detail-1,
+  .detail-2,
+  .detail-3,
+  .desc,
+  .desc-1,
+  .word-1,
+  .word-2,
+  .label-1,
+  .horizontal-line-3 {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  /* 只保留 container-1 的动画 */
+  .container-1 .picture {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+
+  .container-1 .title,
+  .container-1 .title-1,
+  .container-1 .more {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+  }
+
+  .container-1 .picture.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .container-1 .title.visible,
+  .container-1 .title-1.visible,
+  .container-1 .more.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .container-1 .title { transition-delay: 0.2s; }
+  .container-1 .title-1 { transition-delay: 0.4s; }
+  .container-1 .more { transition-delay: 0.6s; }
 }
 
 /* 移动端导航菜单 */
@@ -2040,72 +2121,91 @@ html, body {
     cursor: pointer;
   }
 
-  .header-common.body {
-    position: fixed;
-    top: 60px;
-    transform: translateY(-10px);
-    left: 0;
-    width: 100%;
-    height: auto;
-    max-height: calc(100vh - 60px);
-    background: #fff;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 1001;
-    overflow-y: auto;
+  /* 保持原有的移动端样式 */
+  
+  /* 添加移动端动画效果 */
+  .container-1 .picture,
+  .container-3 .long-banner,
+  .container-3-1 .long-banner-3-1,
+  .container-4 .thumbnail,
+  .container-5-1 .long-banner-5-1,
+  .container-6 .long-banner-6 {
     opacity: 0;
-    visibility: hidden;
+    transform: translateX(-30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
   }
 
-  .header-common.body.menu-active {
+  .container-1 .picture.visible,
+  .container-3 .long-banner.visible,
+  .container-3-1 .long-banner-3-1.visible,
+  .container-4 .thumbnail.visible,
+  .container-5-1 .long-banner-5-1.visible,
+  .container-6 .long-banner-6.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* .title,
+  .title-1,
+  .title-2,
+  .caption,
+  .caption-1,
+  .detail,
+  .detail-1,
+  .detail-2,
+  .detail-3,
+  .desc,
+  .desc-1,
+  .more,
+  .word-1,
+  .word-2,
+  .label-1 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  } */
+
+  .title.visible,
+  .title-1.visible,
+  .title-2.visible,
+  .caption.visible,
+  .caption-1.visible,
+  .detail.visible,
+  .detail-1.visible,
+  .detail-2.visible,
+  .detail-3.visible,
+  .desc.visible,
+  .desc-1.visible,
+  .more.visible,
+  .word-1.visible,
+  .word-2.visible,
+  .label-1.visible {
+    opacity: 1;
     transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
   }
 
-  .menu-overlay {
-    display: block;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 60px);
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+  .horizontal-line-3 {
     opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(4px);
+    transform: scaleX(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
   }
 
-  .menu-overlay.active {
+  .horizontal-line-3.visible {
     opacity: 1;
-    visibility: visible;
+    transform: scaleX(1);
   }
 
-  .tag-common {
-    font-size: 16px;
-    padding: 15px 0;
-    width: 100%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  /* 添加动画延迟 */
+  .container-1 .title {
+    transition-delay: 0.2s;
   }
 
-  .tag-item-0,
-  .tag-item-1,
-  .tag-item-2,
-  .tag-item-3 {
-    margin: 0;
+  .container-1 .title-1 {
+    transition-delay: 0.4s;
   }
 
-  /* 移除原有的滚动显示隐藏效果 */
-  .header-hidden .header-common.body,
-  .header-visible .header-common.body {
-    transform: none;
-    opacity: 1;
-    visibility: visible;
+  .container-1 .more {
+    transition-delay: 0.6s;
   }
 }
 
