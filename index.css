@@ -27,6 +27,16 @@ html, body {
   width: 100%;
   z-index: 1000;
   background: #fff;
+  box-shadow: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.header-wrapper.header-visible {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-wrapper.header-hidden {
+  box-shadow: none;
 }
 
 .header-common {
@@ -34,29 +44,41 @@ html, body {
   width: 100%;
   box-sizing: border-box;
   background: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 .header-common.header {
-  padding: 0;
   transform: translateY(0);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
-  height: 80px;
+  height: 151px;
+  border-bottom: none;
+  position: relative;
+  z-index: 2;
 }
 
 .header-common.body {
   position: fixed;
-  top: 80px;
-  transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: top;
+  top: 118px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: top, transform;
   display: flex;
   justify-content: center;
-  padding: 15px 0;
+  padding-top: 60px;
   margin: 0;
+  border-top: none;
+  z-index: 1;
+}
+
+.header-hidden {
+  height: 50px;
 }
 
 .header-hidden .header-common.header {
   transform: translateY(-100%);
+  height: 80px;
+  overflow: hidden;
 }
 
 .header-visible .header-common.header {
@@ -65,15 +87,16 @@ html, body {
 
 .header-hidden .header-common.body {
   top: 0;
+  padding-top: 10px;
 }
 
 .header-visible .header-common.body {
-  top: 80px;
+  top: 118px;
 }
 
 /* 内容区域添加上边距，为fixed header腾出空间 */
 .submain {
-  margin-top: 160px;
+  margin-top: 195px;
 }
 
 .tag-common {
@@ -108,23 +131,27 @@ html, body {
 
 .container {
   display: flex;
-  justify-content: space-between;
-  align-self: center;
+  justify-content: flex-start;
+  align-items: center;
   width: 69px;
   height: 44px;
   padding: 9px 0;
   box-sizing: border-box;
+  position: absolute;
+  left: 159px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .wrapper {
-  margin-left: 159px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-self: center;
+  align-items: flex-start;
   height: 26px;
   padding: 6px 0 4px;
   box-sizing: border-box;
+  margin: 0;
 }
 
 .horizontal-line {
@@ -169,27 +196,30 @@ html, body {
   width: 320px;
   height: 80px;
   object-fit: contain;
-  margin: 0 auto;
-  display: block;
-  padding-left: 220px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .word {
-  align-self: center;
+  position: absolute;
+  right: 230px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 18px;
   font-weight: 500;
-  line-height: 80px;
   color: rgba(21, 111, 78, 1);
   white-space: nowrap;
-  display: flex;
-  align-items: center;
 }
 
 .icon-search {
-  align-self: center;
+  position: absolute;
+  right: 161px;
+  top: 50%;
+  transform: translateY(-50%);
   width: clamp(24px, 3vw, 31px);
   height: auto;
-  margin: 5px 161px 0 24px;
 }
 
 .body {
@@ -246,16 +276,30 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-self: center;
   width: 100vw;
   height: 779px;
-  padding: 0 12px 36px;
+  padding: 0 0 36px;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  background-image: url(./images/img_2.png);
-  background-size: cover;
-  background-position: center;
-  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+}
+
+.container-1 .picture {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 987px;
+  height: 779px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.container-1 .wrapper-1-common {
+  position: relative;
+  z-index: 2;
 }
 
 .wrapper-1 {
@@ -712,7 +756,7 @@ html, body {
   align-items: center;
   width: 100%;
   max-width: 1440px;
-  margin: 158px auto 0;
+  margin: 363px auto 0;
   padding: 0 2rem;
   box-sizing: border-box;
 }
